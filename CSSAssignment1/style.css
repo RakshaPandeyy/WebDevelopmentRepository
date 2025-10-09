@@ -1,0 +1,38 @@
+/* *{ */
+    /* background-color: rgba(223, 225, 225, 0.926);
+} */
+
+img{
+    height: 300px;
+    width: 300px;
+    border: 2px;
+    border-radius: 50%;
+    object-fit: fill;
+    border-color: black;
+}
+#main{
+    border: 5px rgb(9, 4, 0);
+}
+#tdmain{
+padding: 50px;
+background-color: rgba(1, 1, 58, 0.856);
+}
+#td2main{
+    vertical-align: top;
+
+}
+#aboutmetd{
+    padding: 30px;
+}
+#exptd{
+    padding: 40px;
+}
+#edutd{
+    padding: 40px;
+}
+#awctd{
+    padding: 40px;
+}
+/* table #tdmain td{
+    background-color: rgba(9, 9, 93, 0.821);
+} */

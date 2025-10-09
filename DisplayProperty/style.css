@@ -1,0 +1,60 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+.pclass {
+  display: flex;              
+  gap: 30px;  
+  background: #3a6cf4;      
+  justify-content: center;
+  align-items: center;   
+  padding: 250px;       
+}
+
+.form {
+    display: grid;
+  background: #f3f1f1;
+  padding: 30px;
+  border-radius: 10%;
+   gap: 2px;
+  
+} 
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.options a {
+  color: #3a6cf4;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background: #3a6cf4;
+  border: 1px rgb(241, 241, 239);
+  color: white;
+  font-size: 10px;
+  border-radius: 10px;
+}
+
+.form-box p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.form-box p a {
+  color: #3a6cf4;
+ 
+}
+#span{
+    color: #3a6cf4;
+}

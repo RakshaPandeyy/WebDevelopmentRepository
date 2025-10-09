@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza Order Form</title>
+  </head>
+  <body>
+    <fieldset>
+      <h2>Pizza Order Form</h2>
+      <div>
+        <label for="Name">First Name: </label>
+        <input type="text" name="Name" id="Firstname" />
+      </div>
+      <div>
+        <label for="Lastname">Last Name: </label>
+        <input type="text" name="Lastname" id="Lastname" />
+      </div>
+      <div>
+        <label for="Email">Enter e-mail address: </label>
+        <input type="email" name="Email" id="Email" />
+      </div>
+      <div>
+        <label for="phone number">Phone Number: </label>
+        <input type="number" name="phone number" id="phone number" />
+      </div>
+      <div>
+        <label for="deliverydate">Preferred delivery date: </label>
+        <input type="date" name="deliverydate" id="deliverydate" />
+      </div>
+      <div>
+        <label for="size">Size: </label>
+        <input type="radio" name="size" id="small" /> <span>small</span>
+        <input type="radio" name="size" id="medium" /> <span>medium</span>
+        <input type="radio" name="size" id="large" /> <span>large</span>
+      </div>
+      <div>
+        <label for="flavour">Flavour: </label>
+        <input type="checkbox" name="flavour" id="hawaian" />
+        <span
+          >Hawaiian
+          <label for="quantity"></label>
+          <select name="quantity" id="quantity">
+            <option value="quantity">Select Quantity</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </span>
+        <input type="checkbox" name="flavour" id="pepperoni" />
+        <span
+          >pepperoni
+          <label for="quantity"></label>
+          <select name="quantity" id="quantity">
+            <option value="quantity">Select Quantity</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </span>
+        <input type="checkbox" name="flavour" id="vegetable" />
+        <span
+          >vegetable
+          <label for="quantity"></label>
+          <select name="quantity" id="quantity">
+            <option value="select quantity">Select Quantity</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </span>
+      </div>
+      <div>
+        <label for="credit card number">Credit card number </label>
+        <input
+          type="number"
+          name="credit card number"
+          id="credit card number"
+        />
+      </div>
+      <div>
+        <label for="pin">PIN</label>
+        <input type="password" name="pin" id="pin" />
+      </div>
+      <div>
+        <label for="note">Additional note</label>
+        <textarea name="note" id="note"></textarea>
+      </div>
+      <br>
+      <div>
+        
+        <button type="submit">Submit Order</button>
+      </div>
+    </fieldset>
+  </body>
+</html>

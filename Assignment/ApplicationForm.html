@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Form</title>
+  </head>
+  <body>
+    <h2 align="center">APPLICATION FORM</h2>
+    <fieldset>
+      <legend>Personal Details</legend>
+      <table>
+        <tr>
+          <th width="300px">Applicant's Full Name</th>
+          <td width="300px">
+            <select name="prefix" id="prefix">
+              <option value="">Select</option>
+              <option value="mr">Mr.</option>
+              <option value="mrs">Mrs.</option>
+              <option value="ms">Ms.</option>
+            </select>
+            <input type="text" name="fullname" id="fullname" />
+          </td>
+          <th width="300px">Care Of</th>
+          <td width="300px">
+            <input type="radio" name="care" id="parent" value="parent" /> Parent
+            <input type="radio" name="care" id="guardian" value="guardian" />
+            Guardian
+          </td>
+        </tr>
+        <tr>
+          <th>Father's Name</th>
+          <td><input type="text" name="fathername" id="fathername" /></td>
+          <th>Mother's Name</th>
+          <td><input type="text" name="mothername" id="mothername" /></td>
+        </tr>
+        <tr>
+          <th>Gender</th>
+          <td>
+            <input type="radio" name="gender" value="male" /> <span>Male</span>
+            <input type="radio" name="gender" value="female" />
+            <span>Female</span>
+            <input type="radio" name="gender" value="other" />
+            <span>Other</span>
+          </td>
+          <th>Date of Birth</th>
+          <td><input type="date" name="dob" id="dob" /></td>
+        </tr>
+        <tr>
+          <th>Marital Status</th>
+          <td>
+            <select name="marital" id="marital">
+              <option value="">Select</option>
+              <option value="single">Not Married</option>
+              <option value="married">Married</option>
+            </select>
+          </td>
+          <th>Category</th>
+          <td>
+            <select name="category" id="category">
+              <option value="">Select Cat</option>
+              <option value="gen">Gen</option>
+              <option value="obc">OBC</option>
+              <option value="scst">SC</option>
+              <option value="scst">ST</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>Handicapped</th>
+          <td>
+            <input type="radio" name="handicap" value="yes" /> Yes
+            <input type="radio" name="handicap" value="no" /> No
+          </td>
+          <th>Ex-Serviceman</th>
+          <td>
+            <input type="radio" name="exserviceman" value="yes" /> Yes
+            <input type="radio" name="exserviceman" value="no" /> No
+          </td>
+        </tr>
+        <tr>
+          <th>EWS</th>
+          <td>
+            <input type="radio" name="ews" value="yes" /> Yes
+            <input type="radio" name="ews" value="no" /> No
+          </td>
+          <th>Religion</th>
+          <td>
+            <select name="religion" id="religion">
+              <option value="">Select religion</option>
+              <option value="hindu">Hindu</option>
+              <option value="muslim">Muslim</option>
+              <option value="christian">Christian</option>
+              <option value="sikh">Sikh</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+    <br />
+
+    <fieldset>
+      <legend>Contact Details</legend>
+      <table border="1">
+        <tr>
+          <th>Mobile Number</th>
+          <td><input type="number" name="mobileno" id="mobileno" /></td>
+          <th>Email ID</th>
+          <td><input type="email" name="email" id="email" /></td>
+        </tr>
+        <tr>
+          <th>Address Line 1</th>
+          <td><input type="text" name="addr1" id="addr1" /></td>
+          <th>Address Line 2</th>
+          <td><input type="text" name="addr2" id="addr2" /></td>
+        </tr>
+        <tr>
+          <th>City</th>
+          <td><input type="text" name="city" id="city" /></td>
+          <th>State</th>
+          <td>
+            <select name="state" id="state">
+              <option value="">Select</option>
+              <option value="mp">Madhya Pradesh</option>
+              <option value="up">Uttar Pradesh</option>
+              <option value="m">Maharashtra</option>
+              <option value="r">Rajasthan</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>Pin Code</th>
+          <td><input type="number" name="pincode" id="pincode" /></td>
+        </tr>
+      </table>
+    </fieldset>
+    <br />
+    <fieldset>
+      <legend>Qualification Details</legend>
+      <table border="1">
+        <tr>
+          <th>Sr. No.</th>
+          <th>Qualification</th>
+          <th>Board/University</th>
+          <th>Passing Year</th>
+          <th>Max Marks</th>
+          <th>Marks Obtained</th>
+          <th>Percentage</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>
+            <select name="mt" id="10th">
+              <option value="select">select</option>
+              <option value="10th">10th</option>
+            </select>
+          </td>
+          <td><input type="text" name="board1" id="board1" /></td>
+          <td><input type="text" name="year1" id="year1" /></td>
+          <td><input type="text" name="max1" id="max1" /></td>
+          <td><input type="text" name="marks1" id="marks1" /></td>
+          <td><input type="text" name="perc1" id="perc1" /></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>
+            <select name="srsc" id="12th">
+              <option value="select">select</option>
+              <option value="12th">12th</option>
+            </select>
+          </td>
+          <td><input type="text" name="board2" id="board2" /></td>
+          <td><input type="text" name="year2" id="year2" /></td>
+          <td><input type="text" name="max2" id="max2" /></td>
+          <td><input type="text" name="marks2" id="marks2" /></td>
+          <td><input type="text" name="perc2" id="perc2" /></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>
+            <select name="grad" id="grad">
+              <option value="select">select</option>
+              <option value="grad">grad</option>
+            </select>
+          </td>
+          <td><input type="text" name="board3" id="board3" /></td>
+          <td><input type="text" name="year3" id="year3" /></td>
+          <td><input type="text" name="max3" id="max3" /></td>
+          <td><input type="text" name="marks3" id="marks3" /></td>
+          <td><input type="text" name="perc3" id="perc3" /></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>
+            <select name="pgrad" id="pgrad">
+              <option value="select">select</option>
+              <option value="pgrad">pgrad</option>
+            </select>
+          </td>
+          <td><input type="text" name="board4" id="board4" /></td>
+          <td><input type="text" name="year4" id="year4" /></td>
+          <td><input type="text" name="max4" id="max4" /></td>
+          <td><input type="text" name="marks4" id="marks4" /></td>
+          <td><input type="text" name="perc4" id="perc4" /></td>
+        </tr>
+      </table>
+    </fieldset>
+    <br />
+    <fieldset>
+      <legend>Language Knowledge</legend>
+      <table border="1">
+        <tr>
+          <th>Language</th>
+          <th>Reading</th>
+          <th>Writing</th>
+          <th>Spoken</th>
+        </tr>
+        <tr>
+          <td>Hindi</td>
+          <td><input type="checkbox" name="hindiread" /></td>
+          <td><input type="checkbox" name="hindiwrite" /></td>
+          <td><input type="checkbox" name="hindispeak" /></td>
+        </tr>
+        <tr>
+          <td>English</td>
+          <td><input type="checkbox" name="engread" /></td>
+          <td><input type="checkbox" name="engrite" /></td>
+          <td><input type="checkbox" name="engspeak" /></td>
+        </tr>
+        <tr>
+          <td>Urdu</td>
+          <td><input type="checkbox" name="urduread" /></td>
+          <td><input type="checkbox" name="urduwrite" /></td>
+          <td><input type="checkbox" name="urduspeak" /></td>
+        </tr>
+      </table>
+    </fieldset>
+    <br />
+    <fieldset>
+      <legend>Identification Details</legend>
+      <table border="1">
+        <tr>
+          <th>Aadhar Card Number</th>
+          <td><input type="number" name="aadhar" id="aadhar" /></td>
+          <th>PAN Card Number</th>
+          <td><input type="number" name="pan" id="pan" /></td>
+        </tr>
+        <tr>
+          <th>Upload Photo</th>
+          <td><input type="file" name="photo" id="photo" /></td>
+          <th>Upload Signature</th>
+          <td><input type="file" name="signature" id="signature" /></td>
+        </tr>
+      </table>
+    </fieldset>
+    <br />
+    <div align="center">
+      <button type="submit">Submit</button>
+      <button type="reset">Back</button>
+    </div>
+  </body>
+</html>

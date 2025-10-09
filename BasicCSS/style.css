@@ -1,0 +1,19 @@
+*
+{
+    background-color: rgb(104, 44, 188);
+    color: rgb(249, 249, 250);
+}
+div{
+
+    background-color: aqua;
+    color: black;
+}
+span{
+    color: burlywood;
+}
+.abc{
+    color: rgb(4, 9, 10);
+}
+#abx{
+    color: yellow;
+}

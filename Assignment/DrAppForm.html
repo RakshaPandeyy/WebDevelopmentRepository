@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Appointment Form</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <img src="dr.jpeg" alt="Doctor" width="500px" />
+        </td>
+
+        <td>
+          <h2 align="center"><u>Doctor Appointment Form</u></h2>
+
+          <label for="date">Appointment Date</label><br />
+          <input type="date" name="date" id="date" />
+          <br />
+          <label for="time">Appointment Time</label><br />
+          <input type="time" name="time" id="time" />
+          <br />
+          <label for="fname">Name</label><br />
+          <input type="text" name="fname" id="fname" placeholder="First" />
+          <input type="text" name="lname" id="lname" placeholder="Last" />
+
+          <br />
+          <label>Gender</label>
+          <input type="radio" name="gender" value="male" /> <span>Male</span>
+          <input type="radio" name="gender" value="female" /> <span>Female</span>
+          <br />
+          <label for="phone">Phone no.</label>
+          <input type="number" name="phone" id="phone" />
+          <br />
+          <label for="city">Address</label>
+          <br />
+          <input type="text" name="city" id="city" placeholder="city" />
+          <input type="text" name="state" id="state" placeholder="state" />
+          <br />
+          <label for="query">Your Query</label><br />
+          <textarea name="query" id="query"></textarea>
+          <br />
+          <label>Appointment Type</label><br />
+          <input type="checkbox" name="checkup" value="c" /> Cervix checkup<br />
+          <input type="checkbox" name="checkup" value="h" /> Heart checkup<br />
+          <input type="checkbox" name="checkup" value="e" /> Eye check up<br />
+          <input type="checkbox" name="checkup" value="h" /> Hearing Test<br /><br />
+
+          <button type="submit">Send</button>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

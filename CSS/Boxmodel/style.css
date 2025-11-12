@@ -1,0 +1,25 @@
+#div1{
+border: 1px solid black;
+width: 300px;
+height: 100px;
+background-color: blueviolet;
+font-size: 50px;
+margin: 50px;
+padding: 80px;
+font-weight: 800;
+}
+#div1 span{
+ 
+    background: linear-gradient(0deg, red,green,blueviolet);
+    background-clip: text;
+    color: transparent;
+}
+#div2{
+    border: 1px solid rgb(0, 0, 0);
+width: 300px;
+height: 100px;
+background-color: rgb(34, 78, 3);
+font-size: 50px;
+margin: 10px 20px 30px;
+padding: 80px;
+}

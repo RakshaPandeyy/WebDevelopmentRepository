@@ -1,0 +1,491 @@
+#Navbar {
+  width: 98%;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 20px;
+  position: sticky;
+  top: 0px;
+  background-color: rgba(240, 248, 255, 0.734);
+}
+#mt {
+  font-family: "Inter", sans-serif;
+
+  padding-left: 60px;
+  font-size: 120%;
+  font-weight: 800;
+  color: rgb(51, 51, 51);
+
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  /* font-size: larger; */
+}
+#nbtn {
+  padding-right: 90px;
+}
+
+#head {
+  display: flex;
+  gap: 20px;
+  font-size: large;
+  padding-bottom: 50px;
+}
+
+#signin {
+  color: rgb(51, 51, 51);
+  background: rgba(255, 255, 255, 0.907);
+}
+#signin:hover {
+  background-color: rgba(199, 199, 200, 0.881);
+}
+#block {
+  background-color: rgb(51, 51, 51);
+  color: aliceblue;
+}
+.btn {
+  border: 0cap;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+
+#about {
+  display: flex;
+  align-items: center;
+  margin: 60px 50px;
+}
+#atext {
+  width: 50%;
+}
+#welcometxt {
+  font-family: "Inter", sans-serif;
+  font-size: 350%;
+  color: rgb(51, 51, 51);
+}
+#pabt {
+  font-family: "Inter", sans-serif;
+  font-size: 160%;
+  color: rgb(131, 131, 131);
+}
+#mailp {
+  font-family: "Inter", sans-serif;
+  font-size: larger;
+}
+#iptbtn {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  gap: 10px;
+}
+#mailip {
+  font-family: "Inter", sans-serif;
+  width: 60%;
+  height: 35px;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 10px;
+}
+#btnip {
+  font-family: "Inter", sans-serif;
+  width: 25%;
+  font-weight: 400;
+  background-color: rgb(51, 51, 51);
+  color: aliceblue;
+  border: 1px solid rgb(51, 51, 51);
+  border-radius: 10px;
+  /* background-color: rgb(51, 51, 51); */
+}
+#rdmy {
+  font-family: "Inter", sans-serif;
+  color: rgb(119, 119, 119);
+  font-size: 110%;
+}
+#tnc {
+  color: rgb(119, 119, 119);
+  font-size: 110%;
+}
+#myimg {
+  width: 600px;
+  height: 550px;
+  margin-left: 80px;
+  align-items: center;
+  object-fit: cover;
+  border-radius: 5%;
+}
+#hding {
+  font-family: "Inter", sans-serif;
+  padding-top: 30px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+#icon {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0px;
+  padding-bottom: 20px;
+}
+.icon {
+  /* padding: 10px 20px; */
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+#skillmain {
+  font-family: "Inter", sans-serif;
+  font-size: larger;
+  font-weight: 700;
+  text-align: center;
+}
+#ab {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  font-size: 280%;
+}
+#sktxt {
+  font-family: "Inter", sans-serif;
+  padding: 10px 200px;
+  text-align: center;
+  font-size: 125%;
+  color: rgb(119, 119, 119);
+}
+#maintch {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.tch {
+  display: grid;
+  gap: 50px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+.skicon {
+  background-color: rgb(51, 51, 51);
+  color: rgb(252, 252, 252);
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  padding-left: 20px;
+  padding-top: 20px;
+  font-size: 150%;
+  border-radius: 50%;
+}
+.techs {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  font-size: 150%;
+}
+.desc {
+  color: rgb(119, 119, 119);
+  font-family: "Inter", sans-serif;
+  margin: 0px 50px;
+  text-align: center;
+}
+#hproj {
+  font-family: "Inter", sans-serif;
+
+  text-align: center;
+  font-size: 280%;
+}
+#aproj {
+  font-family: "Inter", sans-serif;
+  padding: 10px 450px;
+  text-align: center;
+  font-size: 125%;
+  color: rgb(119, 119, 119);
+}
+#divproj {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 50px 100px;
+}
+.iproj {
+  padding: 50px 25px;
+}
+.projimg {
+  border-radius: 15px;
+}
+.ptitle {
+  font-family: "Inter", sans-serif;
+  font-size: 130%;
+}
+.dtl {
+  font-family: "Inter", sans-serif;
+  color: rgb(119, 119, 119);
+  font-size: 100%;
+}
+.dbtn {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  padding: 5px 16px;
+  background-color: rgb(51, 51, 51);
+  color: aliceblue;
+  border-radius: 5px;
+}
+#mndivr {
+  padding: 80px 40px;
+  display: flex;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+}
+.resumedivs {
+  width: 50%;
+  padding: 0px 90px;
+}
+#hdingrsm {
+  font-family: "Inter", sans-serif;
+  font-size: 200%;
+}
+#desrsm {
+  font-family: "Inter", sans-serif;
+  color: rgb(119, 119, 119);
+  font-size: 110%;
+}
+#vmbtn {
+  margin: 20px;
+  border: none;
+  background-color: white;
+  color: rgb(51, 51, 51);
+  padding: 9px 18px;
+  border-radius: 10px;
+}
+#vmbtn:hover {
+  background-color: rgba(179, 183, 185, 0.918);
+}
+.rsicon {
+  padding: 30px 40px;
+
+  span {
+    font-family: "Inter", sans-serif;
+    color: rgb(119, 119, 119);
+    font-size: 120%;
+    padding-left: 10px;
+  }
+  i {
+    padding: 10px;
+    background-color: rgb(51, 51, 51);
+    color: white;
+    border-radius: 10%;
+  }
+}
+#hwcs {
+  font-family: "Inter", sans-serif;
+  color: rgb(51, 51, 51);
+  text-align: center;
+  font-size: 260%;
+  margin: 50px 10px;
+}
+#pwcs {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  font-size: 130%;
+  color: rgb(119, 119, 119);
+  padding: 10px 420px;
+}
+#pforc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 250px;
+}
+#hforc {
+  font-size: 200%;
+  font-family: "Inter", sans-serif;
+  padding: 0px 100px 0px 0px;
+}
+#cliep {
+  color: rgb(119, 119, 119);
+  font-family: "Inter", sans-serif;
+  padding: 10px 180px 0px 0px;
+  font-size: 110%;
+}
+#michl {
+  color: rgb(51, 51, 51);
+  font-family: "Inter", sans-serif;
+  /* padding-bottom: 0px; */
+  font-size: larger;
+  margin-bottom: 2px;
+}
+#mkt {
+  color: rgb(119, 119, 119);
+  font-family: "Inter", sans-serif;
+  /* padding-top: 0px; */
+  margin-top: 2px;
+  font-size: 110%;
+}
+#mndivsi {
+  display: flex;
+  gap: 5px;
+  img {
+    width: 40px;
+    height: 40px;
+    opacity: 50%;
+  }
+  img:hover{
+   opacity:100%;
+  }
+}
+
+#imgc {
+  border-radius: 10px;
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+}
+#pch {
+  text-align: center;
+  color: rgb(119, 119, 119);
+  font-family: "Inter", sans-serif;
+  font-size: 120%;
+}
+#ab {
+  font-family: "Inter", sans-serif;
+  font-size: 250%;
+}
+
+#iconsbnw {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  width: 1200px;
+  object-fit: contain;
+  padding: 0px 150px;
+}
+.ic {
+  width: 180px;
+  height: 180px;
+  filter: grayscale();
+}
+#chead {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  font-size: 250%;
+  color: rgb(51, 51, 51);
+}
+#cdesc {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  color: rgb(119, 119, 119);
+  padding: 0px 500px;
+  font-size: 120%;
+}
+
+#cntdiv {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0px;
+  margin: auto;
+  box-shadow: 5px 5px 10px rgb(22, 22, 22);
+}
+
+#cm {
+  font-family: "Inter", sans-serif;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: left;
+  p {
+    color: rgb(117, 115, 115);
+  }
+}
+
+.cinfo {
+  display: flex;
+  padding: 15px;
+  justify-content: baseline;
+  gap: 10px;
+}
+#formdiv {
+  padding: 40px;
+  display: flex;
+}
+
+.fullname {
+  display: flex;
+  gap: 20px;
+}
+
+.formentry {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  label {
+    color: rgb(28, 58, 91);
+  }
+}
+
+input {
+  font-family: "Inter", sans-serif;
+  border: none;
+  border-bottom: 1px solid #bfbebe;
+  padding: 10px 10px;
+}
+textarea {
+  border: none;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+#slct {
+  display: flex;
+  gap: 15px;
+  margin: 10px 5px;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+#sndbtn {
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  padding: 10px 20px;
+}
+
+#footer {
+  border-top: 1px solid #9e9d9dee;
+  padding: 15px;
+  background-color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.ftdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(119, 119, 119);
+  p {
+    font-size: 110%;
+  }
+}
+
+.fic {
+  display: flex;
+  gap: 30px;
+  margin-left: 550px;
+  a {
+    text-decoration: none;
+    color: rgb(90, 90, 90);
+    font-size: 15px;
+  }
+}
+
+.subsbtn {
+  background-color: #3a3a3a;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+}

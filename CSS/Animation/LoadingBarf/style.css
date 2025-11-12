@@ -1,0 +1,20 @@
+#d1{
+    width:200px;
+    height:20px;
+    border: 1px solid black;
+    background-color: white;
+    #d2{
+     width:2%;
+     height: 20px;
+     background-color: rgb(188, 106, 120);
+    }
+}
+      
+#d1:hover{
+    #d2{
+        width:100%;
+        background-color: green;
+        transition: width 5s ease-in-out, background-color 5s ease-in-out;
+
+    }
+}

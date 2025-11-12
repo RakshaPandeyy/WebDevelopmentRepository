@@ -1,0 +1,11 @@
+h1{
+    width:200px;
+    border: 1px solid red;
+    margin-left: 0px;
+    text-align: center;
+}
+h1:hover{
+    width:400px;
+    /* margin-left: 200px; */
+    transition: width 5s;
+}

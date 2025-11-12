@@ -1,0 +1,42 @@
+:root{
+    --primary:blue;
+    --secondary:gray;
+    --tertiary:rgb(84,84, 84);
+    --text:whitesmoke;
+
+    --sb:space-between;
+    
+    /* global variable */
+    
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+
+    --abc:center;
+    /* local variable */
+
+
+  border: 1px solid black;
+  background-color: var(--primary);
+  color: aliceblue;
+  padding: 10px 50px;
+  display: flex;
+  justify-content: var(--sb);
+  align-items: var(--abc);
+  position:sticky;
+  top: 0px;
+}
+#links{
+    display: flex;
+    gap: 20px;
+}
+button{
+    font-size: xx-large;
+    background-color: red;
+    position: fixed;
+    bottom: 40px;
+    right:40px;
+}

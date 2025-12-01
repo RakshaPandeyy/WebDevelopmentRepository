@@ -1,0 +1,13 @@
+#content {
+  height: 90vh;
+}
+#img{
+    border: 1px solid black;
+    max-width: 1000px;
+    max-height: 600px;
+    object-fit: contain; 
+    
+    /* without changing aspect ratio adjusted to fit in */
+
+    
+}

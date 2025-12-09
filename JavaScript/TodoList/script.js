@@ -1,5 +1,5 @@
 function AddTask() {
-  const task = document.getElementById("newtask").value.trim();
+  const task = document.getElementById("NewTask").value.trim();
 
   console.log(task);
 
@@ -13,22 +13,15 @@ function AddTask() {
 
     const b = document.createElement("button");
     b.classList.add("btn", "btn-danger", "ms-3");
-
-    b.innerHTML = `<i class="bi bi-trash3"></i> Delete`;
+    b.innerHTML = `<i class="bi bi-trash"></i> Delete`;
     b.onclick = () => {
       l.remove();
     };
-
-    // const i=document.createElement("i");
-    // i.classList.add = ("bi", "bi-trash3");
-
-    // const s= document.createElement("span");
-    // b.appendChild(i);
 
     l.appendChild(d);
     l.appendChild(b);
 
     document.getElementById("TaskList").appendChild(l);
-    document.getElementById("newtask").value = " ";
+    document.getElementById("NewTask").value = "";
   }
 }

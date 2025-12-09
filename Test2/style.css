@@ -1,0 +1,148 @@
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #083ad3;
+  border-bottom: 1px solid #e6e9ef;
+  /* z-index: 100; */
+}
+#navitems {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#heading {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-weight: bold;
+  text-align: start;
+  color: #fafafa;
+  font-size: 150%;
+}
+#navlinks {
+  align-items: end;
+  align-content: end;
+}
+div a {
+  margin-left: 14px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+div a:hover {
+  color: #fff;
+  background: #383c40c1;
+  text-decoration: underline;
+}
+#hero {
+  padding: 60px 16px;
+  background: linear-gradient(180deg, #ffffff, #f0f6ff);
+}
+#hero-items {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+#hero h1 {
+  margin: 0 0 8px 0;
+  font-size: 32px;
+  color: #1c3f8a;
+}
+#hero p {
+  font-weight: 150;
+  margin: 0 0 14px 0;
+  color: #4b5563;
+  max-width: 60ch;
+}
+.abtn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #1f6feb;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.abtn:hover {
+  background: #383c40c1;
+  box-shadow: 0 8px 20px rgba(31, 111, 235, 0.15);
+}
+.prod {
+  padding: 36px 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.prod h2 {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-weight: bold;
+  color: #1c3f8a;
+  margin-top: 0;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.card {
+  background: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(16, 24, 40, 0.05);
+  width: calc(50% - 8px);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+}
+.card h3 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+}
+.card .pnames {
+  margin: 0 0 8px 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+.card .price {
+  font-weight: 700;
+  color: #1f6feb;
+  margin: 8px 0;
+}
+.card .buynow {
+  display: inline-block;
+  margin-top: 6px;
+  text-decoration: none;
+  color: #1f6feb;
+  font-weight: 700;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(16, 24, 40, 0.08);
+  border-color: rgba(31, 111, 235, 0.08);
+}
+#h2{
+    font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-weight: bold;
+  color: #1c3f8a;
+}

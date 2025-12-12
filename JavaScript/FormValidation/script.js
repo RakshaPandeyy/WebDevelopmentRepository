@@ -12,7 +12,8 @@ function Submit() {
   if (!nm) {
     document.getElementById("NameError").innerText = "Required";
     return;
-  } else if (!/^[A-Za-z ]+$/.test(nm)) { //(regex) it works on ASCII concept only
+  } else if (!/^[A-Za-z ]+$/.test(nm)) {
+    //(regex) it works on ASCII concept only
     document.getElementById("NameError").innerText =
       "Only Alphabets and Spaces are Allowed";
     return;

@@ -2,7 +2,7 @@ async function getWeather() {
   const city = document.getElementById("city").value.trim();
   const { lat, lon } = await getGeoLocation(city);
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f132e2d5df2dbec9e0d9df5a4fd11067`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=apikey`
   );
 
   const data = await response.json();
@@ -21,7 +21,7 @@ async function getWeather() {
 async function getGeoLocation(city) {
   console.log(city);
   const response = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=f132e2d5df2dbec9e0d9df5a4fd11067`
+    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=apikey`
   );
 
   const data = await response.json();

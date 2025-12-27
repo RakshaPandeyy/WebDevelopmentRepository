@@ -1,12 +1,28 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import Footer from "./components/Footer";
+import Home from "./pages/home";
+import About from "./pages/about";
+import Product from "./pages/product";
+import Contact from "./pages/contact";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  
-
   return (
     <>
-      <h1 id="head">Hello World</h1>
-      <div>this is my first react app</div>
+      <BrowserRouter>
+      <Header/>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/About" element={<About/>}/>
+          <Route path="/Product" element={<Product/>}/>
+          <Route path="/Contact" element={<Contact/>}/>
+
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
     </>
   );
 }

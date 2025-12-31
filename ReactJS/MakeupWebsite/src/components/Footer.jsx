@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const Footer = () => {
   return (
     <>
-   <div className='align-baseline'>
-     -designed by Raksha Pandeyy
-   </div>
+      <div className="text-blue-300 align-bottom justify-end">
+        <span>-designed by Raksha Pandeyy</span>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

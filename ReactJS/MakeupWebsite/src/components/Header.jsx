@@ -11,8 +11,11 @@ const Header = () => {
           <span>GlowMore </span> <GiLipstick className="text-white-200" />
         </div>
         <div className="flex justify-end gap-5">
-          <Link to={"/"}>Home</Link>
-          <Link to={"/About"}>About</Link>
+          <Link to={"/"} className="hover:underline">Home</Link>
+          <Link to={"/About"} className="hover:underline">About</Link>
+          <Link to={"/Product"} className="hover:underline">Products</Link>
+          <Link to={"/Login"} className="hover:underline font-bold">LOGIN</Link>
+          <Link to={"/Register"} className="hover:underline font-bold">REGISTER</Link>
         </div>
       </div>
     </>

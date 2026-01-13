@@ -1,4 +1,6 @@
 import dotenv from "dotenv";
+import AuthRouter from "./src/routers/authRouter.js";
+import morgan from "morgan";
 dotenv.config();
 
 import express from "express";
@@ -6,12 +8,19 @@ import cors from "cors";
 import connectDB from "./src/config/db.js";
 const app = express();
 
-app.use(cors( {origin: "http://localhost:5173"}))
+app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
-// app.use("/auth", AuthRouter);
+app.use(morgan("dev"));
+app.use("/auth", AuthRouter);
 
 app.get("/", (req, res) => {
   res.json({ message: "server connected" });
+});
+app.use((error, req, res, next) => {
+  const ErrorMessage = error.message || "Internal server error";
+  const statusCode = error.statusCode || 500;
+console.log(ErrorMessage,statusCode);
+  res.status(statusCode).json({ message: ErrorMessage });
 });
 
 const port = process.env.PORT || 5000;

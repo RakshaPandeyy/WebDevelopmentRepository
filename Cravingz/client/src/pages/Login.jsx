@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -37,7 +40,7 @@ const Login = () => {
     return Object.keys(Error).length > 0 ? false : true;
   };
 
-  const handleSubmit =async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
@@ -48,9 +51,10 @@ const Login = () => {
     }
 
     try {
-      const res = await api.post("/auth/login",formData)
+      const res = await api.post("/auth/login", formData);
       toast.success(res.data.message);
       handleClearForm();
+      navigate("/user-dashboard");
     } catch (error) {
       console.log(error);
       toast.error(error.message);
@@ -65,9 +69,7 @@ const Login = () => {
         <div className="max-w-xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">
-              Login
-            </h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">Login</h1>
             <p className="text-lg text-gray-600">
               You are 1 step away to stop your Cravings
             </p>
@@ -83,7 +85,6 @@ const Login = () => {
               {/* Personal Information */}
               <div className="mb-10">
                 <div className="space-y-4">
-                  
                   <input
                     type="email"
                     name="email"
@@ -93,7 +94,7 @@ const Login = () => {
                     required
                     className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
                   />
-                  
+
                   <input
                     type="password"
                     name="password"
@@ -103,7 +104,6 @@ const Login = () => {
                     required
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
                   />
-                  
                 </div>
               </div>
 

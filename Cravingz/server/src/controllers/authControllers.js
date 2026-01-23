@@ -1,5 +1,7 @@
 import bcrypt from "bcrypt";
 import User from "../models/userModel.js";
+import { genToken } from "../utils/authToken.js";
+
 export const UserRegister = async (req, res, next) => {
   try {
     const { fullName, email, mobileNumber, password } = req.body;
@@ -35,6 +37,7 @@ export const UserRegister = async (req, res, next) => {
     next(error);
   }
 };
+
 export const UserLogin = async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -58,6 +61,13 @@ export const UserLogin = async (req, res, next) => {
       error.statusCode = 402;
       return next(error);
     }
+    console.log("user verified");
+
+    //Token generation will be done here
+    genToken(existingUser, res);
+
+    console.log(existingUser);
+
     res.status(200).json({ message: "Login Successful", data: existingUser });
   } catch (error) {
     next(error);

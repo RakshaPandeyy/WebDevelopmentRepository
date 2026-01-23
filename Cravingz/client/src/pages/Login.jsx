@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/Authcontext";
 
 const Login = () => {
+  const { setUser, setIsLogin } = useAuth();
+  
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -11,8 +14,7 @@ const Login = () => {
     password: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [validationError, setValidationError] = useState({});
-
+ const [validationError, setValidationError] = useState({});
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -24,7 +26,7 @@ const Login = () => {
       password: "",
     });
   };
-
+  
   const validate = () => {
     let Error = {};
 
@@ -40,11 +42,13 @@ const Login = () => {
     return Object.keys(Error).length > 0 ? false : true;
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    if (!validate()) {
+    console.log(formData);
+     if (!validate()) {
       setIsLoading(false);
       toast.error("Fill the Form Correctly");
       return;
@@ -53,11 +57,14 @@ const Login = () => {
     try {
       const res = await api.post("/auth/login", formData);
       toast.success(res.data.message);
+      setUser(res.data.data);
+      setIsLogin(true);
+      sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data));
       handleClearForm();
       navigate("/user-dashboard");
     } catch (error) {
       console.log(error);
-      toast.error(error.message);
+      toast.error(error?.response?.data?.message || "Unknown Error");
     } finally {
       setIsLoading(false);
     }
@@ -69,10 +76,12 @@ const Login = () => {
         <div className="max-w-xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">Login</h1>
-            <p className="text-lg text-gray-600">
-              You are 1 step away to stop your Cravings
-            </p>
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">
+              Welcome Back
+            </h1>
+            {/* <p className="text-lg text-gray-600">
+              You are 1 step away to stop your Cavings
+            </p> */}
           </div>
 
           {/* Form Container */}
@@ -92,7 +101,8 @@ const Login = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                    disabled={isLoading}
+                    className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
 
                   <input
@@ -102,7 +112,8 @@ const Login = () => {
                     placeholder="Create Password"
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
                 </div>
               </div>
@@ -110,16 +121,18 @@ const Login = () => {
               {/* Submit Button */}
               <div className="flex gap-4 pt-8 border-t-2 border-gray-200">
                 <button
-                  type="submit"
-                  className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  Login
-                </button>
-                <button
                   type="reset"
-                  className="flex-1 bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg hover:bg-gray-400 transition duration-300 transform hover:scale-105"
+                  disabled={isLoading}
+                  className="flex-1 bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg hover:bg-gray-400 transition duration-300 transform hover:scale-105 disabled:scale-100 disabled:bg-gray-300 disabled:cursor-not-allowed"
                 >
                   Clear Form
+                </button>
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg disabled:scale-100 disabled:bg-gray-300  disabled:cursor-not-allowed"
+                >
+                  {isLoading ? "loading.." : "Login"}
                 </button>
               </div>
             </form>

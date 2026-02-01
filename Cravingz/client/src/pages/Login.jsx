@@ -3,18 +3,22 @@ import toast from "react-hot-toast";
 import api from "../config/Api";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/Authcontext";
+import ForgetPasswordModals from "../components/publicModals/ForgetPasswordModals";
 
 const Login = () => {
-  const { setUser, setIsLogin } = useAuth();
-  
+  const { setUser, setIsLogin, setRole } = useAuth();
+
   const navigate = useNavigate();
+
+  const [isForgetPasswordModelOpen, setIsForgetPasswordModelOpen] =
+    useState(false);
 
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
   const [isLoading, setIsLoading] = useState(false);
- const [validationError, setValidationError] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -26,34 +30,12 @@ const Login = () => {
       password: "",
     });
   };
-  
-  const validate = () => {
-    let Error = {};
-
-    if (
-      !/^[\w\.]+@(gmail|outlook|ricr|yahoo)\.(com|in|co.in)$/.test(
-        formData.email
-      )
-    ) {
-      Error.email = "Use Proper Email Format";
-    }
-    setValidationError(Error);
-
-    return Object.keys(Error).length > 0 ? false : true;
-  };
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
     console.log(formData);
-     if (!validate()) {
-      setIsLoading(false);
-      toast.error("Fill the Form Correctly");
-      return;
-    }
-
     try {
       const res = await api.post("/auth/login", formData);
       toast.success(res.data.message);
@@ -61,7 +43,31 @@ const Login = () => {
       setIsLogin(true);
       sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data));
       handleClearForm();
-      navigate("/user-dashboard");
+      switch (res.data.data.role) {
+        case "manager": {
+          setRole("manager");
+          navigate("/resturant-dashboard");
+          break;
+        }
+        case "partner": {
+          setRole("partner");
+          navigate("/rider-dashboard");
+          break;
+        }
+        case "customer": {
+          setRole("customer");
+          navigate("/user-dashboard");
+          break;
+        }
+        case "admin": {
+          setRole("admin");
+          navigate("/admin-dashboard");
+          break;
+        }
+
+        default:
+          break;
+      }
     } catch (error) {
       console.log(error);
       toast.error(error?.response?.data?.message || "Unknown Error");
@@ -92,7 +98,7 @@ const Login = () => {
               className="p-8"
             >
               {/* Personal Information */}
-              <div className="mb-10">
+              <div className="mb-5">
                 <div className="space-y-4">
                   <input
                     type="email"
@@ -109,12 +115,23 @@ const Login = () => {
                     type="password"
                     name="password"
                     value={formData.password}
-                    placeholder="Create Password"
+                    placeholder="Password"
                     onChange={handleChange}
                     required
                     disabled={isLoading}
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
+                </div>
+                <div className="w-full flex justify-end">
+                  <button
+                    className="text-(--color-primary) hover:text-(--color-secondary) cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsForgetPasswordModelOpen(true);
+                    }}
+                  >
+                    Forget Password?
+                  </button>
                 </div>
               </div>
 
@@ -144,6 +161,12 @@ const Login = () => {
           </p>
         </div>
       </div>
+
+      {isForgetPasswordModelOpen && (
+        <ForgetPasswordModals
+          onClose={() => setIsForgetPasswordModelOpen(false)}
+        />
+      )}
     </>
   );
 };

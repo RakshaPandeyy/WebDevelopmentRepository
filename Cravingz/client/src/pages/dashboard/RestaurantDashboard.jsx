@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import UserSideBar from "../../components/userDashboard/SideBar";
+import SideBar from "../../components/Dashboard/SideBar";
 import Overview from "../../components/userDashboard/Overview";
 import Profile from "../../components/userDashboard/Profile";
 import Order from "../../components/userDashboard/Order";
@@ -8,7 +8,7 @@ import HelpDesk from "../../components/userDashboard/HelpDesk";
 import { useAuth } from "../../context/Authcontext";
 import { useNavigate } from "react-router-dom";
 
-const UserDashboard = () => {
+const RestaurantDashboard = () => {
   const { role, isLogin } = useAuth();
   const navigate = useNavigate();
   const [active, setActive] = useState("overview");
@@ -62,4 +62,4 @@ const UserDashboard = () => {
   );
 };
 
-export default UserDashboard;
+export default RestaurantDashboard;

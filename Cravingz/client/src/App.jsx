@@ -1,13 +1,16 @@
 import React from "react";
 import Header from "./components/Header";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Login from "./pages/Login";
 import { Toaster } from "react-hot-toast";
-import UserDashboard from "./pages/dashboard/UserDashboard"
+import UserDashboard from "./pages/dashboard/UserDashboard";
+import RiderDashboard from "./pages/dashboard/RiderDashboard";
+import ResturantDashboard from "./pages/dashboard/RestaurantDashboard";
+import AdminDashboard from "./pages/dashboard/AdminDashboard";
 
 const App = () => {
   return (
@@ -22,8 +25,10 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/user-dashboard" element={<UserDashboard />} />
+          <Route path="/rider-dashboard" element={<RiderDashboard />} />
+          <Route path="/resturant-dashboard" element={<ResturantDashboard />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
         </Routes>
       </BrowserRouter>
     </>

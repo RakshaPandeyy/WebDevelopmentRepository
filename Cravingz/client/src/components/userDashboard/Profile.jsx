@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../context/Authcontext";
-import EditProfileModal from "./modals/EditProfileModal";
+import EditProfileModal from "../userDashboard/modals/EditProfileModal";
 import UserImage from "../../assets/userImage.jpg";
 import { FaCamera } from "react-icons/fa";
 import api from "../../config/Api";
 import toast from "react-hot-toast";
-import ResetPasswordModal from "./modals/ResetPasswordModal";
+import ResetPasswordModal from "../userDashboard/modals/ResetPasswordModal";
 
 const Profile = () => {
   const { user, setUser } = useAuth();
@@ -54,7 +54,7 @@ const Profile = () => {
             <div className="relative">
               <div className=" border rounded-full w-36 h-36 overflow-hidden">
                 <img
-                  src={preview || user.photo.url || UserImage}
+                  src={preview || user?.photo?.url || UserImage}
                   alt=""
                   className="w-full h-full object-cover"
                 />

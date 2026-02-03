@@ -1,6 +1,6 @@
 import User from "../models/userModel.js";
 import bcrypt from "bcrypt";
-import { genToken } from "../utils/authToken.js";
+import { genToken, genOtpToken } from "../utils/authToken.js";
 import OTP from "../models/otpModel.js";
 import { sendOTPEmail } from "../utils/emailService.js";
 
@@ -205,16 +205,18 @@ export const UserVerifyOtp = async (req, res, next) => {
 
 export const UserForgetPassword = async (req, res, next) => {
   try {
+    console.log("FORGET PASSWORD API HIT ");
+
     const { newPassword } = req.body;
     const currentUser = req.user;
 
+    console.log("USER IN FORGET:", currentUser?.email);
+    console.log("NEW PASSWORD:", newPassword);
+
     if (!newPassword) {
-      const error = new Error("All feilds required");
-      error.statusCode = 400;
-      return next(error);
+      return res.status(400).json({ message: "All fields required" });
     }
 
-    //encrypt the password
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await bcrypt.hash(newPassword, salt);
 
@@ -222,11 +224,15 @@ export const UserForgetPassword = async (req, res, next) => {
 
     await currentUser.save();
 
+    console.log("PASSWORD UPDATED IN DB ");
+
     res
       .status(200)
       .clearCookie("otpToken")
       .json({ message: "Password Changed. Please login again" });
+
   } catch (error) {
+    console.log("FORGET ERROR:", error);
     next(error);
   }
 };

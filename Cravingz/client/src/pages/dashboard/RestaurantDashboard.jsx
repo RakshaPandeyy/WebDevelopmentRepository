@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import SideBar from "../../components/Dashboard/SideBar";
-import Overview from "../../components/userDashboard/Overview";
-import Profile from "../../components/userDashboard/Profile";
-import Order from "../../components/userDashboard/Order";
-import Transaction from "../../components/userDashboard/Transaction";
-import HelpDesk from "../../components/userDashboard/HelpDesk";
+import RestaurantSideBar from "../../components/restaurantDashboard/RestaurantSidebar";
+import RestaurantOverview from "../../components/restaurantDashboard/RestaurantOverview";
+import RestaurantProfile from "../../components/restaurantDashboard/RestaurantProfile";
+import RestaurantMenu from "../../components/restaurantDashboard/RestaurantMenu";
+import RestaurantOrders from "../../components/restaurantDashboard/RestaurantOrders";
+import RestaurantEarnings from "../../components/restaurantDashboard/RestaurantEarnings";
+import RestaurantHelpDesk from "../../components/restaurantDashboard/RestaurantHelpdesk";
 import { useAuth } from "../../context/Authcontext";
 import { useNavigate } from "react-router-dom";
 
@@ -20,16 +21,14 @@ const RestaurantDashboard = () => {
     }
   });
 
-  if (role !== "customer") {
+  if (role !== "manager") {
     return (
       <>
         <div className="p-3">
           <div className="border rounded shadow p-5 w-4xl mx-auto text-center bg-gray-100">
-            <div className="text-5xl text-red-600">
-              ⊗
-            </div>
+            <div className="text-5xl text-red-600">⊗</div>
             <div className="text-xl">
-              You are not login as Customer. Please Login again.
+              You are not logged in as Restaurant Manager. Please login again.
             </div>
           </div>
         </div>
@@ -41,9 +40,11 @@ const RestaurantDashboard = () => {
     <>
       <div className="w-full h-[90vh] flex">
         <div
-          className={`bg-(--color-background) duration-300 ${isCollapsed ? "w-2/60" : "w-12/60"}`}
+          className={`bg-(--color-background) duration-300 ${
+            isCollapsed ? "w-2/60" : "w-12/60"
+          }`}
         >
-          <UserSideBar
+          <RestaurantSideBar
             active={active}
             setActive={setActive}
             isCollapsed={isCollapsed}
@@ -51,11 +52,12 @@ const RestaurantDashboard = () => {
           />
         </div>
         <div className={`${isCollapsed ? "w-58/60" : "w-48/60"} duration-300`}>
-          {active === "overview" && <Overview />}
-          {active === "profile" && <Profile />}
-          {active === "orders" && <Order />}
-          {active === "transactions" && <Transaction />}
-          {active === "helpdesk" && <HelpDesk />}
+          {active === "overview" && <RestaurantOverview />}
+          {active === "profile" && <RestaurantProfile />}
+          {active === "menu" && <RestaurantMenu />}
+          {active === "orders" && <RestaurantOrders />}
+          {active === "earnings" && <RestaurantEarnings />}
+          {active === "helpdesk" && <RestaurantHelpDesk />}
         </div>
       </div>
     </>

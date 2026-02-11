@@ -137,20 +137,22 @@ export const GetRestaurantMenuItem = async (req, res, next) => {
 export const RestaurantUpdate = async (req, res, next) => {
   try {
     const {
-      fullName,
-      email,
-      mobileNumber,
-      gender,
-      dob,
-      address,
-      city,
-      pin,
-      restaurantName,
-      cuisine,
-      documents,
-      paymentDetails,
-      geoLocation,
-    } = req.body;
+  fullName,
+  email,
+  mobileNumber,
+  gender,
+  dob,
+  address,
+  city,
+  pin,
+  restaurantName,
+  cuisine,
+  rating,
+  documents,
+  paymentDetails,
+  geoLocation,
+} = req.body;
+
     const currentUser = req.user;
 
     // Validation for required fields
@@ -226,8 +228,12 @@ export const RestaurantUpdate = async (req, res, next) => {
     currentUser.pin = pin;
 
     // Update restaurant information
-    currentUser.restaurantName = restaurantName;
-    currentUser.cuisine = cuisine || currentUser.cuisine;
+    // Update restaurant information
+currentUser.restaurantName = restaurantName;
+currentUser.cuisine = cuisine || currentUser.cuisine;
+
+currentUser.rating =
+  rating || currentUser.rating;
 
     // Update nested documents
     if (documents) {

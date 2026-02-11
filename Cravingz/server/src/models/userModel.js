@@ -100,6 +100,13 @@ const userSchema = mongoose.Schema(
       required: true,
       default: "N/A",
     },
+    
+    // Restaurant Rating
+    rating: {
+      type: Number,
+      default: 4.0,
+    },
+
     documents: {
       gst: {
         type: String,

@@ -1,18 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  /* Primary */
-  --color-primary: #ee3b3b;
-  --color-primary-hover: #0F163F;
+  /* Primary (Main Brand Color - Red) */
+  --color-primary: #E63946;        /* Tomato Red */
+  --color-primary-hover: #C1121F;  /* Dark Red */
 
-  /* Secondary */
-  --color-secondary: #de6c3a;
-  --color-secondary-hover: #D85F2E;
+  /* Secondary (Orange Accent) */
+  --color-secondary: #F77F00;        /* Warm Orange */
+  --color-secondary-hover: #E36414; /* Deep Orange */
 
-  /* Background & Text */
-  --color-background: #BBE0EF;
-  --color-text: #161E54;
+  /* Highlight / CTA (Yellow) */
+  --color-highlight: #FFD60A;       /* Food Yellow */
+  --color-highlight-hover: #FFC300;
 
-  /* Accent */
-  --color-accent: #FF986A;
+  /* Background */
+  --color-background: #FFF8ED;      /* Soft Cream */
+
+  /* Text */
+  --color-text: #2B2B2B;            /* Dark Charcoal */
+  --color-text-light: #6B6B6B;
+
+  /* Accent (Extra Pop) */
+  --color-accent: #FF9F1C;          /* Mango Orange */
 }

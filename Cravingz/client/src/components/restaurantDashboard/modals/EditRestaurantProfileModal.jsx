@@ -9,12 +9,13 @@ const EditRestaurantProfileModal = ({ onClose }) => {
     email: user?.email || "",
     mobileNumber: user?.mobileNumber || "",
     gender: user?.gender || "",
-    dob: user?.dob || "",
+    dob: user?.dob && user.dob !== "N/A" ? user.dob : "",
     address: user?.address || "",
     city: user?.city || "",
     pin: user?.pin || "",
     restaurantName: user?.restaurantName || "",
     cuisine: user?.cuisine || "",
+    rating: user?.rating || "",
     documents: {
       gst: user?.documents?.gst || "",
       fssai: user?.documents?.fssai || "",
@@ -139,7 +140,7 @@ const EditRestaurantProfileModal = ({ onClose }) => {
     setMessage({ type: "", text: "" });
 
     try {
-      const res = await api.put("/user/update", formData);
+      const res = await api.put("/restaurant/update", formData);
       if (res.data?.data) {
         sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data));
         setUser(res.data.data);

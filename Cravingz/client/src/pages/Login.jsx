@@ -7,7 +7,7 @@ import ForgetPasswordModals from "../components/publicModals/ForgetPasswordModal
 import Loading from "../components/Loading";
 
 const Login = () => {
-   const { setUser, setIsLogin, setRole } = useAuth();
+  const { setUser, setIsLogin, setRole } = useAuth();
 
   const navigate = useNavigate();
 
@@ -85,99 +85,150 @@ const Login = () => {
     );
   }
 
-  return (
-    <>
-      <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 py-6 px-4">
-        <div className="max-w-xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">
-              Welcome Back
-            </h1>
-            {/* <p className="text-lg text-gray-600">
-              You are 1 step away to stop your Cavings
-            </p> */}
-          </div>
+ return (
+  <>
+    <div className="min-h-screen flex items-center justify-center bg-[var(--color-background)] px-4">
 
-          {/* Form Container */}
-          <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
-            <form
-              onSubmit={handleSubmit}
-              onReset={handleClearForm}
-              className="p-8"
-            >
-              {/* Personal Information */}
-              <div className="mb-5">
-                <div className="space-y-4">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    disabled={isLoading}
-                    className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
-                  />
+      {/* Card */}
+      <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
 
-                  <input
-                    type="password"
-                    name="password"
-                    value={formData.password}
-                    placeholder="Password"
-                    onChange={handleChange}
-                    required
-                    disabled={isLoading}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
-                  />
-                </div>
-                <div className="w-full flex justify-end">
-                  <button
-                    className="text-(--color-primary) hover:text-(--color-secondary) cursor-pointer"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsForgetPasswordModelOpen(true);
-                    }}
-                  >
-                    Forget Password?
-                  </button>
-                </div>
-              </div>
-
-              {/* Submit Button */}
-              <div className="flex gap-4 pt-8 border-t-2 border-gray-200">
-                <button
-                  type="reset"
-                  disabled={isLoading}
-                  className="flex-1 bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg hover:bg-gray-400 transition duration-300 transform hover:scale-105 disabled:scale-100 disabled:bg-gray-300 disabled:cursor-not-allowed"
-                >
-                  Clear Form
-                </button>
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg disabled:scale-100 disabled:bg-gray-300  disabled:cursor-not-allowed"
-                >
-                  {isLoading ? "loading.." : "Login"}
-                </button>
-              </div>
-            </form>
-          </div>
-
-          {/* Footer Note */}
-          <p className="text-center text-gray-600 mt-8 text-sm">
-            All fields marked are mandatory. We respect your privacy.
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-[var(--color-text)] mb-1">
+            Welcome Back
+          </h1>
+          <p className="text-sm text-gray-500">
+            Login to continue 🍕
           </p>
         </div>
-      </div>
 
-      {isForgetPasswordModelOpen && (
-        <ForgetPasswordModal
-          onClose={() => setIsForgetPasswordModelOpen(false)}
-        />
-      )}
-    </>
-  );
+        {/* Form */}
+        <form
+          onSubmit={handleSubmit}
+          onReset={handleClearForm}
+          className="space-y-5"
+        >
+
+          {/* Email */}
+          <div>
+            <label className="block mb-1 text-sm font-medium text-gray-600">
+              Email
+            </label>
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              disabled={isLoading}
+              className="
+                w-full px-4 py-3 rounded-lg
+                border border-gray-300
+                focus:border-[var(--color-primary)]
+                focus:ring-1 focus:ring-[var(--color-primary)]
+                outline-none
+                transition
+              "
+            />
+          </div>
+
+          {/* Password */}
+          <div>
+            <label className="block mb-1 text-sm font-medium text-gray-600">
+              Password
+            </label>
+
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+              disabled={isLoading}
+              className="
+                w-full px-4 py-3 rounded-lg
+                border border-gray-300
+                focus:border-[var(--color-primary)]
+                focus:ring-1 focus:ring-[var(--color-primary)]
+                outline-none
+                transition
+              "
+            />
+          </div>
+
+          {/* Forgot */}
+          <div className="flex justify-end">
+            <button
+              className="text-sm text-[var(--color-secondary)] hover:underline"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsForgetPasswordModelOpen(true);
+              }}
+            >
+              Forgot Password?
+            </button>
+          </div>
+
+          {/* Buttons */}
+          <div className="flex gap-4 pt-4">
+
+            {/* Clear */}
+            <button
+              type="reset"
+              disabled={isLoading}
+              className="
+                flex-1 py-3 rounded-lg
+                border border-gray-300
+                text-gray-700
+                hover:bg-gray-100
+                transition
+                disabled:opacity-60
+              "
+            >
+              Clear
+            </button>
+
+            {/* Login */}
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="
+                flex-1 py-3 rounded-lg
+                bg-[var(--color-primary)]
+                text-white
+                font-semibold
+                hover:bg-[var(--color-primary-hover)]
+                transition
+                shadow
+                disabled:opacity-60
+              "
+            >
+              {isLoading ? "Loading..." : "Login"}
+            </button>
+
+          </div>
+        </form>
+
+        {/* Footer */}
+        <p className="text-center text-xs text-gray-500 mt-6">
+          We respect your privacy
+        </p>
+
+      </div>
+    </div>
+
+    {isForgetPasswordModelOpen && (
+      <ForgetPasswordModals
+        onClose={() => setIsForgetPasswordModelOpen(false)}
+      />
+    )}
+  </>
+);
+
+
 };
 
 export default Login;

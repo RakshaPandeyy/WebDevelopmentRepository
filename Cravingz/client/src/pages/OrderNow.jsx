@@ -48,7 +48,7 @@ const OrderNow = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {restaurants.map((restaurant, idx) => (
               <div
-                key={idx}
+                key={idx} 
                 onClick={() => handleResturantClick(restaurant._id)}
                 className="bg-white rounded-xl border border-gray-200 
                          hover:shadow-xl transition cursor-pointer
@@ -58,7 +58,7 @@ const OrderNow = () => {
                 <img
                   src={restaurant.photo?.url || "/food-placeholder.jpg"}
                   alt={restaurant.restaurantName}
-                  className="w-full h-44 object-cover 
+                  className="w-full h-44 object-cover rounded-t-xl
                            group-hover:scale-105 transition duration-300"
                 />
 

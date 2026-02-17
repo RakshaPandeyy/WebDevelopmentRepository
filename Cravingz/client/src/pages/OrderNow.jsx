@@ -24,7 +24,7 @@ const OrderNow = () => {
     fetchAllRestaurant();
   }, []);
 
-  const handleResturantClick = (restaurantID) => {
+  const handleRestaurantClick = (restaurantID) => {
     console.log("restaurant Clicked");
     console.log("OrderNow Page", restaurantID);
 
@@ -49,7 +49,7 @@ const OrderNow = () => {
             {restaurants.map((restaurant, idx) => (
               <div
                 key={idx} 
-                onClick={() => handleResturantClick(restaurant._id)}
+                onClick={() => handleRestaurantClick(restaurant._id)}
                 className="bg-white rounded-xl border border-gray-200 
                          hover:shadow-xl transition cursor-pointer
                          overflow-hidden group"

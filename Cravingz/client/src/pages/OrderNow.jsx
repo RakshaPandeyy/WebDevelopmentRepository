@@ -28,7 +28,7 @@ const OrderNow = () => {
     console.log("restaurant Clicked");
     console.log("OrderNow Page", restaurantID);
 
-    navigate(`/restaurant/${restaurantID}`);
+    navigate("/restaurantMenu", { state: { restaurantID } }); 
   };
   console.log(restaurants);
 

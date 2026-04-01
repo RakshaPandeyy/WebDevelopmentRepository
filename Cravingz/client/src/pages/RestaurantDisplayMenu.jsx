@@ -20,7 +20,7 @@ const restaurantID = location.state?.restaurantID;
   const fetchMenuItems = async () => {
     setLoading(true);
     try {
-      const res = await api.get(`/public/restaurant/menu/${restaurantID}`);
+      const res = await api.get(`/public/restaurantMenu/${restaurantID}`);
 
       setMenuItems(res.data.data);
     } catch (error) {
@@ -68,13 +68,13 @@ const restaurantID = location.state?.restaurantID;
 
   useEffect(() => {
     fetchMenuItems();
-  }, [data]);
+  }, [restaurantID]);
 
   return (
     <>
       <div className="w-7xl p-3 rounded shadow mx-auto mt-2 ">
         <img
-          src={data.photo.url}
+          src={restaurant.photo.url}
           alt=""
           className="w-48 h-48 object-cover rounded"
         />
